@@ -11,19 +11,19 @@ wget — no-check-certificate -O shadowsocks.sh https://raw.githubusercontent.co
 #Change ss to x
 chmod +x shadowsocks.sh
 
-#Run deploy script and install ss server
-
-./shadowsocks.sh 2>&1 | tee shadowsocks.log
-
 #Replace python to python3
-
 sed -i 's/python setup/python3 setup/g' shadowsocks.sh
+
+#Run deploy script and install ss server
+./shadowsocks.sh 2>&1 | tee shadowsocks.log
 
 #Change 'collections.MutableMapping' to 'collections.abc.MutableMapping'
 sed -i 's/collections.MutableMapping/collections.abc.MutableMapping/g' /usr/local/lib/python3.12/dist-packages/shadowsocks-3.0.0-py3.12.egg/shadowsocks/lru_cache.py
 
 #Open port xxx for this server
+ufw disable
 ufw allow 8877
+ufw enable
 
 #Restart SS server
 /etc/init.d/shadowsocks restart
