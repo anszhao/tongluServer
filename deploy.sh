@@ -20,7 +20,7 @@ chmod +x shadowsocks.sh
 sed -i 's/python setup/python3 setup/g' shadowsocks.sh
 
 #Change 'collections.MutableMapping' to 'collections.abc.MutableMapping'
-sed -i 's/collections.MutableMapping/collections.abc.MutableMapping/g' lru_cache.py /usr/local/lib/python3.12/dist-packages/shadowsocks-3.0.0-py3.12.egg/shadowsocks/lru_cache.py
+sed -i 's/collections.MutableMapping/collections.abc.MutableMapping/g' /usr/local/lib/python3.12/dist-packages/shadowsocks-3.0.0-py3.12.egg/shadowsocks/lru_cache.py
 
 #Open port xxx for this server
 ufw allow 8877
