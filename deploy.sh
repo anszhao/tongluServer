@@ -4,6 +4,9 @@
 
 wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
+#Check bbr service is running
+lsmod | grep bbr
+
 #Install SS server from git
 
 wget — no-check-certificate -O shadowsocks.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh
