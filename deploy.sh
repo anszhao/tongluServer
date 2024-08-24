@@ -21,9 +21,7 @@ sed -i 's/python setup/python3 setup/g' shadowsocks.sh
 sed -i 's/collections.MutableMapping/collections.abc.MutableMapping/g' /usr/local/lib/python3.12/dist-packages/shadowsocks-3.0.0-py3.12.egg/shadowsocks/lru_cache.py
 
 #Open port xxx for this server
-ufw disable
 ufw allow 8877
-ufw enable
 
 #Restart SS server
 /etc/init.d/shadowsocks restart
